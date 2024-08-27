@@ -1,0 +1,17 @@
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    ports:
+      - 27017:27017
+    volumes:
+      - type: bind
+        source: ./mongodb
+        target: /data/db
+
+  postgres:
+    image: postgres:alpine-12
+    ports:
+      - 5432:5432
+      - type: bind
+        source: ./postgres
+        target: /data/db # which dir. postgres uses

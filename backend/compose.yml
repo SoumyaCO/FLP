@@ -8,10 +8,3 @@ services:
         source: ./mongodb
         target: /data/db
 
-  postgres:
-    image: postgres:alpine-12
-    ports:
-      - 5432:5432
-      - type: bind
-        source: ./postgres
-        target: /data/db # which dir. postgres uses

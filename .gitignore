@@ -1,6 +1,5 @@
 # backend part
 backend/node_modules
-backend/postgres
 backend/mongodb
 backend/.vscode
 backend/.idea

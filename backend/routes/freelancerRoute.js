@@ -7,12 +7,12 @@ const router = express.Router();
 
 // @ts-ignore
 router.get("/", (req, res) => {
-    res.send({ data: "Here is your data recruiter" });
+    res.send({ data: "Here is your data freelancer" });
 });
 
 // @ts-ignore
 router.get("/id", (req, res) => {
-    res.send({ data: "Data by id recruiter" });
+    res.send({ data: "Data by id freelancer" });
 });
 
 export default router;

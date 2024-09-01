@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Job } from "./jobs";
+import { Job } from "./jobs.js";
 
 /** @typedef {Object} Freelancer
  * @property {Number} id

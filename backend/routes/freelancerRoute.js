@@ -4,15 +4,12 @@ import express from "express";
 const router = express.Router();
 
 // import { FreelancerList, FreelancerID } from "../controllers/freelancerController.js";
+import controller from "../controllers/freelancerController.js";
 
 // @ts-ignore
-router.get("/", (req, res) => {
-    res.send({ data: "Here is your data freelancer" });
-});
+router.get("/", controller.createFreelancer);
 
 // @ts-ignore
-router.get("/id", (req, res) => {
-    res.send({ data: "Data by id freelancer" });
-});
+router.get("/id", controller.updateFreelancer);
 
 export default router;

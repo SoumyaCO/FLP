@@ -1,4 +1,4 @@
-import { Recruiter } from "../models/recruiters";
+import { Recruiter } from "../models/recruiters.js";
 
 /**
  * Creates a new Recruiter with appropriate details
@@ -50,3 +50,5 @@ export function updateRecruiter(recruiter, id) {
             },
         );
 }
+
+export default console.error();

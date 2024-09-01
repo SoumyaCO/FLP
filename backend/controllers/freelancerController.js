@@ -1,4 +1,4 @@
-import { Freelancer } from "../models/freelancers";
+import { Freelancer } from "../models/freelancers.js";
 
 /**
  * Creates new Freelacner with appropriate deatails
@@ -48,3 +48,5 @@ export function updateFreelancer(freelancer, id) {
 			},
 		);
 }
+
+export default console.error();

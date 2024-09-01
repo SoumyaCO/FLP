@@ -4,12 +4,15 @@ import express from 'express';
 import freelancerRoute from './routes/freelancerRoute.js';
 // @ts-ignore
 import recruiterRoute from './routes/recruiterRoute.js';
+// @ts-ignore
+import jobsRoute from './routes/jobsRoute.js';
 
 const app = express();
 
 // Set up the routes
 app.use('/freelancer', freelancerRoute);
 app.use('/recruiter', recruiterRoute);
+app.use('/job', jobsRoute);
 
 app.listen(3000, () => {
 	console.log("http://localhost:3000");

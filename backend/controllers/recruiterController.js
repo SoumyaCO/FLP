@@ -51,4 +51,31 @@ export function updateRecruiter(recruiter, id) {
         );
 }
 
+
+/**
+ * Displays the details of a Recruiter by id
+ * @param {number} id - id of the recruiter to be displayed
+ * @returns {Promise<Recruiter|null>} - Resolves with the recruiter details or null if not found
+ */
+export function getRecruiter(id) {
+    return Recruiter.findOne({ id })
+        .then(
+            /** @param {Recruiter} recruiter */(recruiter) => {
+                if (recruiter) {
+                    console.log("Recruiter details:", recruiter);
+                    return recruiter;
+                } else {
+                    console.log("Recruiter not found");
+                    return null;
+                }
+            }
+        )
+        .catch(
+            /** @param {Error} error */(error) => {
+                console.error(error);
+                throw error; // Re-throw the error to propagate it
+            },
+        );
+}
+
 export default console.error();

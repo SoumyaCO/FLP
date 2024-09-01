@@ -6,9 +6,12 @@ const router = express.Router();
 import controller from "../controllers/jobController.js";
 
 // @ts-ignore
-router.get("/", controller.createJob);
+router.get("/create", controller.createJob);
 
 // @ts-ignore
-router.get("/id", controller.updateJob);
+router.get("/update", controller.updateJob);
+
+// @ts-ignore
+router.get("/id", controller.getJob);
 
 export default router;

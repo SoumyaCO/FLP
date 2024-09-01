@@ -55,4 +55,41 @@ export function updateJob(job, id) {
         );
 }
 
+
+
+/**
+ * Displays the details of a Job by id
+ * @param {number} id - id of the job to be displayed
+ * @returns {Promise<Job|null>} - Resolves with the job details or null if not found
+ */
+export function displayJob(id) {
+    return Job.findOne({ id })
+        .then(
+            /** @param {Job} job */(job) => {
+                if (job) {
+                    console.log("Job details:", {
+                        title: job.title,
+                        description: job.description,
+                        poster: job.poster,
+                        assignedTo: job.assignedTo,
+                        comments: job.comments,
+                        expires: job.expires,
+                        budget: job.budget,
+                    });
+                    return job;
+                } else {
+                    console.log("Job not found");
+                    return null;
+                }
+            }
+        )
+        .catch(
+            /** @param {Error} error */(error) => {
+                console.error(error);
+                throw error; // Re-throw the error to propagate it
+            },
+        );
+}
+
+
 export default console.error();

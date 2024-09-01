@@ -7,9 +7,12 @@ const router = express.Router();
 import controller from "../controllers/freelancerController.js";
 
 // @ts-ignore
-router.get("/", controller.createFreelancer);
+router.get("/create", controller.createFreelancer);
 
 // @ts-ignore
-router.get("/id", controller.updateFreelancer);
+router.get("/update", controller.updateFreelancer);
+
+// @ts-ignore
+router.get("/id", controller.getFreelancer);
 
 export default router;

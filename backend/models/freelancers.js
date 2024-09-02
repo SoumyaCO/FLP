@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
-import { Job } from "./jobs";
+import { Job } from "./jobs.js";
 
 /** @typedef {Object} Freelancer
  * @property {Number} id
+ * @property {string} email
+ * @property {string} password
  * @property {string} firstName
  * @property {string} lastName
  * @property {string} photo
@@ -16,6 +18,18 @@ import { Job } from "./jobs";
 /**@type {mongoose.Schema<Freelancer>} */
 const FreelancerSchema = new mongoose.Schema({
 	id: { type: Number, required: true, unique: true },
+	email: {
+		type: String,
+		required: true,
+		unique: true,
+		lowercase: true, 
+		trim: true
+	},
+	password: {
+		type: String,
+		required: true,
+		minlength: 6 
+	},
 	firstName: { type: String, required: true },
 	lastName: { type: String, required: true },
 	photo: { type: String },

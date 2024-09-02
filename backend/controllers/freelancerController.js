@@ -1,4 +1,4 @@
-import { Freelancer } from "../models/freelancers";
+import { Freelancer } from "../models/freelancers.js";
 
 /**
  * Creates new Freelacner with appropriate deatails
@@ -48,3 +48,35 @@ export function updateFreelancer(freelancer, id) {
 			},
 		);
 }
+
+
+
+/**
+ * Displays the details of a Freelancer by id
+ * @param {number} id - id of the freelancer to be displayed
+ * @returns {Promise<Freelancer|null>} - Resolves with the freelancer details or null if not found
+ */
+export function getFreelancer(id) {
+	return Freelancer.findOne({ id })
+		.then(
+            /** @param {Freelancer} freelancer */(freelancer) => {
+				if (freelancer) {
+					console.log("Freelancer details:", freelancer);
+					return freelancer;
+				} else {
+					console.log("Freelancer not found");
+					return null;
+				}
+			}
+		)
+		.catch(
+            /** @param {Error} error */(error) => {
+				console.error(error);
+				throw error; // Re-throw the error to propagate it
+			},
+		);
+}
+
+
+
+export default console.error();

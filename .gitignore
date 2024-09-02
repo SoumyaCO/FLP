@@ -4,6 +4,7 @@ backend/mongodb
 backend/.vscode
 backend/.idea
 backend/.DS_Store
+backend/.env
 
 # frontend part
 frontend/node_modules
